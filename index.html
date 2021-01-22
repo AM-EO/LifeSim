@@ -4,8 +4,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./docs/main.js"></script>
+    <style type="text/css">
+        body { margin: 0; }
+        #sidebar, #content { position: absolute; } 
+        #sidebar, #content { overflow: auto; padding: 10px; }
+        #header {
+         height: 80px; /* Высота слоя */
+         background: #FEDFC0; border-bottom: 2px solid #7B5427;
+        }
+        #header h1 { padding: 20px; margin: 0; }
+        #sidebar { 
+         width: 150px; background: #ECF5E4; border-right: 1px solid #231F20;
+         top: 82px; /* Расстояние от верхнего края */ 
+         bottom: 0; /* Расстояние снизу  */
+        }
+        #content {
+         top: 82px; /* Расстояние от верхнего края */
+         left: 170px; /* Расстояние от левого края */ 
+         bottom: 0; right: 0;
+        }
+       </style>
 </head>
-<body>
-    <div><h1><textarea name="txt_1" id="1" cols="30" rows="10"></textarea></h1></div>
+<body onload="draw();">
+<!--body-->
+<div id="header"></div>
+<div id="sidebar">
+    <input id="resolution" type="number" min="1" max="10">
+    <input id="density" type="number" min="1" max="10">
+
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</div>
+<div id="content">
+    <canvas id="plot" width="1300" height="650">
+    </canvas>
+</div>
+    
+
 </body>
 </html>
