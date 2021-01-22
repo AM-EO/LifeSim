@@ -1,0 +1,17 @@
+#sidebar {
+    float: left; /* Обтекание по правому краю */
+    width: 110px; /* Ширина слоя */
+}
+
+#content {
+    width: 100px; /* Ширина слоя */
+    float: left; /* Обтекание по правому краю */
+}
+
+.gui {
+    width: 100px; /* Ширина слоя */
+    padding: 5px;
+    float: left; /* Обтекание по правому краю */
+    border: 0px;
+    margin: 0px;
+}

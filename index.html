@@ -2,41 +2,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Life simulator</title>
     <script src="./docs/main.js"></script>
-    <style type="text/css">
-        body { margin: 0; }
-        #sidebar, #content { position: absolute; } 
-        #sidebar, #content { overflow: auto; padding: 10px; }
-        #header {
-         height: 80px; /* Высота слоя */
-         background: #FEDFC0; border-bottom: 2px solid #7B5427;
-        }
-        #header h1 { padding: 20px; margin: 0; }
-        #sidebar { 
-         width: 150px; background: #ECF5E4; border-right: 1px solid #231F20;
-         top: 82px; /* Расстояние от верхнего края */ 
-         bottom: 0; /* Расстояние снизу  */
-        }
-        #content {
-         top: 82px; /* Расстояние от верхнего края */
-         left: 170px; /* Расстояние от левого края */ 
-         bottom: 0; right: 0;
-        }
-       </style>
+    <link rel="stylesheet" type="text/css" href="./docs/style.css">
 </head>
-<body onload="draw();">
-<!--body-->
-<div id="header"></div>
+<body onload="main()">
 <div id="sidebar">
-    <input id="resolution" type="number" min="1" max="10">
-    <input id="density" type="number" min="1" max="10">
-
-    <button id="start">Start</button>
-    <button id="stop">Stop</button>
+    <div id="info">
+        <p class="gui">Поколение:</p>
+        <p id="generation" class="gui"></p>
+        <p class="gui">Живых клеток:</p>
+        <p id="alive" class="gui"></p>
+    </div>
+    <div id="info">
+        <p class="gui">Скорость:</p>
+        <input class="gui" id="speed" name="Скорость" type="range" min="10" max="1000" value="150" onchange="changeSpeed()">
+        <p class="gui">Плотность:</p>
+        <input class="gui" id="density" name="Плотность" type="number" min="1" max="10" value="5">
+        <button class="gui" id="start" onclick="restart()">Restart</button>
+    </div>
 </div>
 <div id="content">
-    <canvas id="plot" width="1300" height="650">
+    <canvas id="plot" width="1400" height="700">
     </canvas>
 </div>
     
