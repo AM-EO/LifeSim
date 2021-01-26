@@ -1,18 +1,18 @@
 //alert( 'Привет, мир!' );
 
 
-let density = 0.5;
-let resolution = 10;
-let width = 1400;
-let height = 700;
-let simSpeed = 150;
-let plot;
-let inTimePlot;
-let generation = 1;
-let alive = 0;
-let elGeneration;
-let elAlive;
-let intervalID ;
+var density = 0.5;
+var resolution = 10;
+var width = 1400;
+var height = 700;
+var simSpeed = 150;
+var plot;
+var inTimePlot;
+var generation = 1;
+var alive = 0;
+var elGeneration;
+var elAlive;
+var intervalID ;
 
 
 function init() {
@@ -55,7 +55,7 @@ function startSimulation() {
     alive = 0;
     for (let x = 1; x < width / resolution - 1; x++) {
         for (let y = 1; y < height / resolution - 1; y++) {
-            let neighbors = 0;
+            var neighbors = 0;
             for (let xx = -1; xx < 2; xx++) {
                 for (let yy = -1; yy < 2; yy++) {
                     neighbors += plot[x + xx][y + yy];
